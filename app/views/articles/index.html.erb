@@ -14,6 +14,10 @@ th {
   font-weight:bold;
   font-size: 1.5em;
 }
+.article-meta-details {
+border-top: 1px solid #eaeaea;
+margin-top: 15px;
+}
 .article-body{
   border-top: 1px solid #eaeaea;
   padding-top: 15px;
@@ -33,6 +37,12 @@ th {
      </div>
      <div class="article-body">
         <%= truncate(article.description, length: 100) %>
+        <div class="article-meta-details">
+        <small>Created by: <%= article.user.username if article.user%>,
+              <%= time_ago_in_words(article.created_at) %> ago,
+              last updated: <%= time_ago_in_words(article.updated_at) %> ago
+            </small>
+            </div>
      </div>
        <div class="article-actions">
           <%= link_to "Edit this article", edit_article_path(article) , class: "btn btn-xs btn-primary"%>
