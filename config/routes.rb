@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
 
-  root 'welcome#home'
+root 'welcome#home'
 get 'welcome/about'
 resources :articles
 
